@@ -1,32 +1,42 @@
-import React, {useContext} from "react";
-import Switch from "@mui/material/Switch";
-import {ThemeContext} from "../../hoc/ContextProvider";
-import {ThemeProvider} from "../../hoc/ContextProvider";
-import {darkTheme, lightTheme} from "./themes/themes";
+// import React, {useContext} from "react";
+// import Switch from "@mui/material/Switch";
+// import {ThemeContext} from "../../hoc/ContextProvider";
+// import {ThemeProvider} from "../../hoc/ContextProvider";
+// import {darkTheme, lightTheme} from "./themes/themes";
+//import {useThemeSwitcher} from "react-css-theme-switcher";
 
 
 const Switcher = () => {
-    const { theme, toggleTheme, isDark} = useContext(ThemeContext);
-    // setIsDark(previous => {
-    //     switcher({ theme: previous ? themes.light : themes.dark });
-    //     return !previous;
-    // });
-    // const {currentTheme, status, switcher, themes} = useThemeSwitcher();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-
+    // const { switcher, themes, currentTheme, status } = useThemeSwitcher();
+    // const [isDarkMode, setIsDarkMode] = React.useState(false);
+    // // const { theme, toggleTheme, isDark} = useContext(ThemeContext);
+    // // const IsDark = ((previous: any) => {
+    // //     switcher({ theme: previous ? themes.light : themes.dark });
+    // //     return !previous;
+    // // });
+    // // const {currentTheme, status, switcher, themes} = useThemeSwitcher();
+    // //
+    //
     // if (status === 'loading') {
     //     return <div>Loading styles...</div>;
     // }
+    //
+    // const toggleDarkMode = () => {
+    //     setIsDarkMode(previous => {
+    //         switcher({ theme: isDarkMode ? themes.light : themes.dark });
+    //         return !previous;
+    //     });
+    // };
 
-    // const toggleTheme = () => {
-    //     // setTheme(theme === 'light'? 'dark' : 'light')
-    //     setIsDark (isDark => {
-    //         switcher({ theme: isDark? themes.light : themes.dark });
+    // const setTheme = () => {
+    //     (theme === 'light'? 'dark' : 'light')
+    //     const SetIsDark = (isDark => {
+    //         switcher({ theme: isDark? theme.light : theme.dark });
     //         return !isDark;
     //     });
     //     console.log('IT WORKED')
     // };
+
         // const toggleTheme = () => {
         //     // if the theme is not light, then set it to dark
         //     if (theme === 'light') {
@@ -36,21 +46,22 @@ const Switcher = () => {
         //         setTheme('light');
         //     }
         // }
-        // '.public/dark.css'
+        //
         // const theme = {
         //     light: lightTheme,
-        //     dark: '.public/dark.css',
+        //     dark: darkTheme,
+        //     // dark: '.public/dark.module.css',
         // };
 
 
-    return (
-            <ThemeProvider  {...theme === 'dark'? lightTheme: darkTheme} >
-                <div className={'switcher_div'}>
-                    <h5>Current theme: {theme}</h5>
-                    <Switch onChange={toggleTheme} checked={!isDark} className={'switch'}/>
-                </div>
-
-            </ThemeProvider>
-        );
+    // return (
+    //         // <ThemeProvider  {...theme === 'dark'? lightTheme: darkTheme} >
+    //             <div className={'switcher_div'}>
+    //                 <h5>Current theme: {currentTheme}</h5>
+    //                 <Switch onChange={toggleDarkMode} checked={!currentTheme} className={'switch'}/>
+    //             </div>
+    //
+    //         // </ThemeProvider>
+    //     );
     };
 export {Switcher}

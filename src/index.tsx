@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useContext, useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import {RouterProvider} from "react-router-dom";
@@ -6,8 +6,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {router} from "./router";
 import {store} from "./store";
-import {ThemeProvider} from "./hoc/ContextProvider";
-
+import './components/Style/themes/dark.module.css'
+import {CustomBody} from "./components/Style/MainStyledComponents";
+import MyThemeProvider from "./components/Theme Switcher/ThemeChanger";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,11 +16,17 @@ const root = ReactDOM.createRoot(
 
 root.render(
 
-    <ThemeProvider>
-        <Provider store={store}>
-            <RouterProvider router={router}/>
-        </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+        <MyThemeProvider>
+            <CustomBody>
+                <div className={"outer_div"}>
+                    <RouterProvider router={router}/>
+                </div>
+            </CustomBody>
+        </MyThemeProvider>
+    </Provider>
+
+
 
 );
 

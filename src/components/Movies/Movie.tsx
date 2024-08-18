@@ -20,14 +20,17 @@ const Movie: FC<IProps> = ({Movie}) => {
 
     return (
         <div className={'mini_block'}>
-            <div className={'inner_movie_block'}>
-                <div className={'mini_movie_title'}>{title}</div>
-                <div>
-                    <img  className={'main_poster'} src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={'poster'}/>
-                </div>
-                <SetRating rating={vote_average}/>
-                <div>
-                    <button onClick = {toDetails} className={'det_button'}>Details... </button>
+            <div className={'border_block'}>
+                <div className={'inner_movie_block'}>
+                    <div className={'mini_movie_title'}>{title}</div>
+                    <div>
+                        <img className={'main_poster'} src={`https://image.tmdb.org/t/p/original${poster_path}`}
+                             alt={'poster'}/>
+                    </div>
+                    <SetRating rating={vote_average}/>
+                    <div>
+                        <button onClick={toDetails} className={'det_button'}>Details...</button>
+                    </div>
                 </div>
             </div>
         </div>

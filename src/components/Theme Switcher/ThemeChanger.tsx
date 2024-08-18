@@ -1,50 +1,19 @@
-// import { useThemeSwitcher } from 'react-css-theme-switcher';
+import React, {FC, PropsWithChildren, useReducer} from "react";
+import { ThemeProvider } from "styled-components";
+import {useAppSelector} from "../../hooks";
 
-// import Switch from '@mui/material/Switch'
+interface IProps extends PropsWithChildren {
+}
 
+const MyThemeProvider : FC<IProps> = ({ children }) => {
+    const {darkThemeEnabled} = useAppSelector(state => state.theme);
 
-const ThemeSwitcher = () => {
+    return (
+        <ThemeProvider theme={{ theme: darkThemeEnabled ? "dark" : "light" }}>
+            {children}
+        </ThemeProvider>
+    );
+};
 
-//     const {currentTheme, status, switcher, themes} = useThemeSwitcher();
-//     const [isDark, setIsDark] = useState(true);
-//     // const [theme, setTheme] = useState('light');
-//
-//
-//     if (status === 'loading') {
-//         return <div>Loading styles...</div>;
-//     }
-//
-//     const toggleLightMode = () =>{
-//         setIsDark ((checked => {
-//             switcher({ theme: checked? themes.light : themes.dark });
-//             return !checked;
-//         }));
-//     };
-//
-//     // const themes = {
-//     //     light: '.public/light.css',
-//     //     dark: '.public/dark.css',
-//     // };
-//
-//
-//
-//     // const toggleDarkMode = (event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
-//     //     setTheme(theme === 'light' ? 'dark' : 'light');
-//     //     // switcher({ theme: checked ? themes.dark : themes.light });
-//     //     setIsDark(checked)
-//     //     // setIsDark (checked => {
-//     //     //     switcher({ theme: checked ? themes.light : themes.dark });
-//     //     //     return !checked;
-//     //     // });
-//     // };
-//     // ChangeEvent<HTMLInputElement>
-//
-//     return (
-//         <div>
-//             <h5>Current theme: {currentTheme}</h5>
-//             <Switch onChange={toggleLightMode} checked={isDark}/>
-//         </div>
-//     );
- };
-export {ThemeSwitcher}
+export default MyThemeProvider;
 

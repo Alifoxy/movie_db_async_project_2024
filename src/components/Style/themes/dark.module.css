@@ -1,7 +1,7 @@
-body {
-    background: linear-gradient(0deg, rgba(255,94,0,1) 0%, rgba(0,0,0,1) 50%);
+/*body {*/
+/*    background: linear-gradient(0deg, rgba(255,94,0,1) 0%, rgba(0,0,0,1) 50%);*/
 
-}
+/*}*/
 .det_button{
     background: linear-gradient(180deg, rgba(255,72,0,1) 30%, rgba(255,142,43,1) 90%);
 }
