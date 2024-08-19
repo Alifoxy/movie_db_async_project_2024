@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesActions} from "../../store";
 import {MovieByParams} from "./MovieByParams";
-import {isFulfilled} from "@reduxjs/toolkit";
+import {MoviesDiv} from "../Style/MainStyledComponents";
 
 interface IProps extends PropsWithChildren {
 }
@@ -28,11 +28,11 @@ const GetMoviesByTitle: FC<IProps> = () => {
     }
 
     return (
-        <div className={'main_block'}>
+        <MoviesDiv>
             <div className={'movies_block'}>
                 {byTitle()}
             </div>
-        </div>
+        </MoviesDiv>
     );
 };
 

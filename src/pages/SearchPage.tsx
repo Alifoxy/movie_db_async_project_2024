@@ -7,12 +7,13 @@ import {CustomBody} from "../components/Style/MainStyledComponents";
 
 const SearchPage = () => {
     return (
-        // <CustomBody></CustomBody>
+        <CustomBody>
             <div className={'outer_div'}>
                 <GetGenres/>
                 <MoviesForm/>
                 <Outlet/>
             </div>
+        </CustomBody>
 
 
     );

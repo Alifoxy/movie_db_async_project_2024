@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {MovieByParams} from "./MovieByParams";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesActions} from "../../store";
+import {MoviesDiv} from "../Style/MainStyledComponents";
 
 interface IProps extends PropsWithChildren {
 }
@@ -21,11 +22,11 @@ const GetMoviesByGenre: FC<IProps> = () => {
     }, [dispatch, with_genres])
 
     return (
-        <div className={'main_block'}>
+        <MoviesDiv>
             <div className={'movies_block'}>
                 {moviesByGenre.map(movie => <MovieByParams key={movie.id} Movie={movie}/>)}
             </div>
-        </div>
+        </MoviesDiv>
     );
 };
 

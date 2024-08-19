@@ -2,7 +2,7 @@ import React, {FC, PropsWithChildren} from "react";
 import {useNavigate} from "react-router-dom";
 import {IMovie} from "../../interfaces";
 import {SetRating} from "../../hooks";
-import {MiniBlock, MiniBorder} from "../Style/MainStyledComponents";
+import {MiniBlock, MiniBorder, MiniInnerBlock} from "../Style/MainStyledComponents";
 
 
 interface IProps extends PropsWithChildren {
@@ -22,7 +22,7 @@ const MovieByParams: FC<IProps> = ({Movie}) => {
     return (
         <MiniBlock>
             <MiniBorder>
-                <div className={'inner_movie_block'}>
+                <MiniInnerBlock>
                     <div className={'mini_movie_title'}>{title}</div>
                     <div>
                         <img className={'main_poster'} src={`https://image.tmdb.org/t/p/original${poster_path}`}
@@ -32,7 +32,7 @@ const MovieByParams: FC<IProps> = ({Movie}) => {
                     <div>
                         <button onClick={toDetails} className={'det_button'}>Details...</button>
                     </div>
-                </div>
+                </MiniInnerBlock>
             </MiniBorder>
 
         </MiniBlock>
