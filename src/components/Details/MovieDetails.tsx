@@ -1,7 +1,8 @@
 import React, {FC, PropsWithChildren} from "react";
 import {IMovieDetails} from "../../interfaces";
-import {Posters} from "../Posters";
+// import {Posters} from "../Posters";
 import {SetDetRating} from "../../hooks";
+import {DescDiv, DetailsInnerDiv, InfoDiv} from "../Style/DetailsStyledComponents";
 
 interface IProps extends PropsWithChildren {
     MovieDetails: IMovieDetails
@@ -21,7 +22,7 @@ const MovieDetails: FC<IProps> = ({MovieDetails}) => {
     });
 
     return (
-        <div className={'mini_det_block'}>
+        <DetailsInnerDiv>
             <h3 className={'det_title'}> Description</h3>
             <div className={'inner_det_block'}>
                 <div>
@@ -31,7 +32,7 @@ const MovieDetails: FC<IProps> = ({MovieDetails}) => {
                 {/*alternate way to get poster*/}
                 {/*<div className={'det_poster_div'}><Posters movieID={id}/></div>*/}
 
-                <div className={'inner_desc_block'}>
+                <DescDiv>
                     <div>id: {id}</div>
                     <div>imdb id: {imdb_id}</div>
                     <div className={'movie_title'} ><p>{title}</p></div>
@@ -52,11 +53,11 @@ const MovieDetails: FC<IProps> = ({MovieDetails}) => {
                     <div>runtime: {runtime}</div>
                     <div>original language: {original_language}</div>
                     <div className={'vote'}><SetDetRating rating={vote_average}/></div>
-                </div>
+                </DescDiv>
             </div>
             <h3 className={'det_title'}> Overview</h3>
-            <div className={'inner_overview_block'}>{overview}</div>
-        </div>
+            <InfoDiv>{overview}</InfoDiv>
+        </DetailsInnerDiv>
 
     );
 };

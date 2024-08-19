@@ -3,6 +3,7 @@ import {useNavigate, useParams, useSearchParams} from "react-router-dom";
 import {MovieDetails} from "./MovieDetails";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesActions} from "../../store";
+import {DetailsDiv} from "../Style/DetailsStyledComponents";
 
 interface IProps extends PropsWithChildren {
 }
@@ -24,10 +25,10 @@ const GetMovieDetails: FC<IProps> = () => {
     }
 
     return (
-        <div className={'main_det_block'}>
+        <DetailsDiv>
             <div><button onClick={back} className={'button'}> {'<< Back'} </button></div>
             <div>{movieByID && <MovieDetails MovieDetails={movieByID}/>}</div>
-        </div>
+        </DetailsDiv>
     );
 };
 

@@ -1,22 +1,19 @@
 .Header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 1280px;
-    height: 70px;
+    height: 110px;
     /*background: #27d326;*/
-    background: #00b900;
+    /*background: #00b900;*/
+    background: #38d52e;
     /*background: #00b442;*/
     /*background: #00dc79;*/
     /*background: #0aaf00;*/
     padding: 10px;
-    border-top: 10px dotted whitesmoke;
-    border-bottom: 10px dotted  whitesmoke;
     font-family: "Trebuchet MS", sans-serif;
     font-size: 30px;
     font-weight: bolder;
     color: whitesmoke;
 }
+
 .Header a{
     text-decoration: none;
     color: aliceblue;

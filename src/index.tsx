@@ -6,7 +6,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {router} from "./router";
 import {store} from "./store";
-import './components/Style/themes/dark.module.css'
 import {CustomBody} from "./components/Style/MainStyledComponents";
 import MyThemeProvider from "./components/Theme Switcher/ThemeChanger";
 
